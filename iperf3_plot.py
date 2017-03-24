@@ -139,7 +139,7 @@ class iperf3_dataParser(object):
         usage = '%prog [ -f FOLDER | -o OUT | -p PLOTFILES | -n NOPLOTFILES | -v ]'
         return OptionParser(usage=usage)
 
-    def parseOptions(self):
+    def parseOptions(self, args):
         parser = self.getOptionParser()
         parser.add_option('-f', '--folder', metavar='FILE',
                       type='string', dest='foldername',
@@ -174,7 +174,7 @@ class iperf3_dataParser(object):
                       dest='verbose', action='store_true', default=False,
                       help='Verbose debug output to stderr.')
 
-        options, _ = parser.parse_args()
+        options, _ = parser.parse_args(args)
         # print(options)
         if not options.foldername:
             parser.error('Foldername is required.')
@@ -274,18 +274,18 @@ class iperf3_dataParser(object):
 
 # if __name__ == '__main__':
 #     s = iperf3_dataParser()
-#     (foldername, plotFiles, noPlotFiles, output, upperLimit, lowerLimit,bound) = s.parseOptions()
-#     print(foldername, plotFiles, noPlotFiles, output, upperLimit, lowerLimit,bound)
+#     (foldername, plotFiles, noPlotFiles, output, upperLimit, lowerLimit,bound) = s.parseOptions(sys.argv[1:])
+#     print (foldername, plotFiles, noPlotFiles, output, upperLimit, lowerLimit,bound)
 
 
 if __name__ == '__main__':
     """Execute the read and formatting."""
     s = iperf3_dataParser()
-    (foldername, plotFiles, noPlotFiles, output, upperLimit, lowerLimit, bound) = s.parseOptions()
-    # print (foldername, plotFiles, noPlotFiles, output, upperLimit, lowerLimit,bound)
+    (foldername, plotFiles, noPlotFiles, output, upperLimit, lowerLimit, bound) = s.parseOptions(sys.argv[1:])
+    print('foldername {}\nplotFiles {}\nnoPlotFiles {}\noutput {}\nupperLimit {}\nlowerLimit {}\nbound {}\n'.format(foldername,str(plotFiles), str(noPlotFiles), output, upperLimit, lowerLimit,str(bound)))
 
     plotFiles=s.get_plotFiles(foldername, plotFiles, noPlotFiles)
-    print (plotFiles)
+    # print (plotFiles)
 
     if len(plotFiles) > 0:
         dataset = s.get_dataset(plotFiles)
