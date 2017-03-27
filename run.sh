@@ -1,8 +1,7 @@
 #!/bin/bash
 
 #plot all lines in testTarball
-# python3 iperf3_plot.py -f ./testTarball \
-#  -o graph/all.png
+# python3 iperf3_plot.py -f ./testTarball  -o graph/all.png
 
 #plot all lines in testTarball with boundary
 python3 iperf3_plot.py -f testTarball \

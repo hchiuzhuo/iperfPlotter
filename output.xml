@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.5.1 on darwin)" generated="20170324 12:11:13.849">
+<suite id="s1" source="/Users/cheryl/DevWorkSpace/lilee_code/iperfV/iperfPlotter/iperf3_plot.robot" name="Iperf3 Plot">
+<test id="s1-t1" name="Test Parse Parameters -f, -o from cmd">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${foldername}</arg>
+<arg>./testTarball</arg>
+</arguments>
+<msg timestamp="20170324 12:11:23.987" level="INFO">${foldername} = ./testTarball</msg>
+<status endtime="20170324 12:11:23.987" starttime="20170324 12:11:23.986" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${plotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:23.989" level="INFO">${plotFiles} = []</msg>
+<status endtime="20170324 12:11:23.989" starttime="20170324 12:11:23.988" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${noPlotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:23.990" level="INFO">${noPlotFiles} = []</msg>
+<status endtime="20170324 12:11:23.990" starttime="20170324 12:11:23.989" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>graph/all.png</arg>
+</arguments>
+<msg timestamp="20170324 12:11:23.991" level="INFO">${output} = graph/all.png</msg>
+<status endtime="20170324 12:11:23.991" starttime="20170324 12:11:23.990" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${upperLimit}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170324 12:11:23.992" level="INFO">${upperLimit} = 0</msg>
+<status endtime="20170324 12:11:23.992" starttime="20170324 12:11:23.991" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${lowerLimit}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170324 12:11:23.993" level="INFO">${lowerLimit} = 0</msg>
+<status endtime="20170324 12:11:23.994" starttime="20170324 12:11:23.993" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${bound}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:23.995" level="INFO">${bound} = []</msg>
+<status endtime="20170324 12:11:23.995" starttime="20170324 12:11:23.994" status="PASS"></status>
+</kw>
+<kw name="Parse Option From Cmd" library="iperf3_plot_library">
+<arguments>
+<arg>-f</arg>
+<arg>${foldername}</arg>
+<arg>-o</arg>
+<arg>${output}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.786" starttime="20170324 12:11:23.995" status="PASS"></status>
+</kw>
+<kw name="Print Message" library="iperf3_plot_library">
+<arguments>
+<arg>foldername ${foldername}\n plotFiles ${plotFiles}\n noPlotFiles ${noPlotFiles}\n output ${output}\n upperLimit ${upperLimit}\n lowerLimit ${lowerLimit}\n bound ${bound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.789" starttime="20170324 12:11:44.787" status="PASS"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status critical="yes" endtime="20170324 12:11:44.789" starttime="20170324 12:11:23.986" status="PASS"></status>
+</test>
+<test id="s1-t2" name="Test Parameters -f, -o">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${foldername}</arg>
+<arg>./testTarball</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.792" level="INFO">${foldername} = ./testTarball</msg>
+<status endtime="20170324 12:11:44.792" starttime="20170324 12:11:44.791" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${plotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.793" level="INFO">${plotFiles} = []</msg>
+<status endtime="20170324 12:11:44.793" starttime="20170324 12:11:44.792" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${noPlotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.794" level="INFO">${noPlotFiles} = []</msg>
+<status endtime="20170324 12:11:44.794" starttime="20170324 12:11:44.793" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>graph/all.png</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.795" level="INFO">${output} = graph/all.png</msg>
+<status endtime="20170324 12:11:44.795" starttime="20170324 12:11:44.794" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${upperLimit}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.796" level="INFO">${upperLimit} = 0</msg>
+<status endtime="20170324 12:11:44.796" starttime="20170324 12:11:44.796" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${lowerLimit}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.798" level="INFO">${lowerLimit} = 0</msg>
+<status endtime="20170324 12:11:44.798" starttime="20170324 12:11:44.797" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${bound}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.799" level="INFO">${bound} = []</msg>
+<status endtime="20170324 12:11:44.799" starttime="20170324 12:11:44.798" status="PASS"></status>
+</kw>
+<kw name="Parse Options" library="iperf3_plot_library">
+<arguments>
+<arg>-f</arg>
+<arg>${foldername}</arg>
+<arg>-o</arg>
+<arg>${output}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.800" starttime="20170324 12:11:44.799" status="PASS"></status>
+</kw>
+<kw name="Result Should Be" library="iperf3_plot_library">
+<arguments>
+<arg>${foldername}</arg>
+<arg>${plotFiles}</arg>
+<arg>${noPlotFiles}</arg>
+<arg>${output}</arg>
+<arg>${upperLimit}</arg>
+<arg>${lowerLimit}</arg>
+<arg>${bound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.801" starttime="20170324 12:11:44.800" status="PASS"></status>
+</kw>
+<kw name="Print Message" library="iperf3_plot_library">
+<arguments>
+<arg>foldername ${foldername}\n plotFiles ${plotFiles}\n noPlotFiles ${noPlotFiles}\n output ${output}\n upperLimit ${upperLimit}\n lowerLimit ${lowerLimit}\n bound ${bound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.802" starttime="20170324 12:11:44.801" status="PASS"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status critical="yes" endtime="20170324 12:11:44.802" starttime="20170324 12:11:44.790" status="PASS"></status>
+</test>
+<test id="s1-t3" name="Test Parameters -f, -o, -b, -u, -l">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${foldername}</arg>
+<arg>./testTarball</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.803" level="INFO">${foldername} = ./testTarball</msg>
+<status endtime="20170324 12:11:44.803" starttime="20170324 12:11:44.803" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${plotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.805" level="INFO">${plotFiles} = []</msg>
+<status endtime="20170324 12:11:44.805" starttime="20170324 12:11:44.804" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${noPlotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.806" level="INFO">${noPlotFiles} = []</msg>
+<status endtime="20170324 12:11:44.806" starttime="20170324 12:11:44.805" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>graph/all.png</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.807" level="INFO">${output} = graph/all.png</msg>
+<status endtime="20170324 12:11:44.807" starttime="20170324 12:11:44.806" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${upperLimit}</arg>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.808" level="INFO">${upperLimit} = 0.5</msg>
+<status endtime="20170324 12:11:44.808" starttime="20170324 12:11:44.807" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${lowerLimit}</arg>
+<arg>0.45</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.809" level="INFO">${lowerLimit} = 0.45</msg>
+<status endtime="20170324 12:11:44.809" starttime="20170324 12:11:44.808" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${bound}</arg>
+<arg>[0.42,0.42,0.42M],[0.46,0.46,0.46M]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.810" level="INFO">${bound} = [0.42,0.42,0.42M],[0.46,0.46,0.46M]</msg>
+<status endtime="20170324 12:11:44.810" starttime="20170324 12:11:44.809" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${expbound}</arg>
+<arg>[[0.42, 0.42, '0.42M'], [0.46, 0.46, '0.46M']]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.812" level="INFO">${expbound} = [[0.42, 0.42, '0.42M'], [0.46, 0.46, '0.46M']]</msg>
+<status endtime="20170324 12:11:44.812" starttime="20170324 12:11:44.811" status="PASS"></status>
+</kw>
+<kw name="Parse Options" library="iperf3_plot_library">
+<arguments>
+<arg>-f</arg>
+<arg>${foldername}</arg>
+<arg>-o</arg>
+<arg>${output}</arg>
+<arg>-b ${bound}</arg>
+<arg>-u ${upperLimit}</arg>
+<arg>-l ${lowerLimit}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.813" starttime="20170324 12:11:44.812" status="PASS"></status>
+</kw>
+<kw name="Result Should Be" library="iperf3_plot_library">
+<arguments>
+<arg>${foldername}</arg>
+<arg>${plotFiles}</arg>
+<arg>${noPlotFiles}</arg>
+<arg>${output}</arg>
+<arg>${upperLimit}</arg>
+<arg>${lowerLimit}</arg>
+<arg>${expbound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.813" starttime="20170324 12:11:44.813" status="PASS"></status>
+</kw>
+<kw name="Print Message" library="iperf3_plot_library">
+<arguments>
+<arg>foldername ${foldername}\n plotFiles ${plotFiles}\n noPlotFiles ${noPlotFiles}\n output ${output}\n upperLimit ${upperLimit}\n lowerLimit ${lowerLimit}\n bound ${expbound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.814" starttime="20170324 12:11:44.814" status="PASS"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status critical="yes" endtime="20170324 12:11:44.814" starttime="20170324 12:11:44.802" status="PASS"></status>
+</test>
+<test id="s1-t4" name="Test Parameters -f, -o, -p">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${foldername}</arg>
+<arg>./testTarball</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.816" level="INFO">${foldername} = ./testTarball</msg>
+<status endtime="20170324 12:11:44.816" starttime="20170324 12:11:44.815" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${plotFiles}</arg>
+<arg>tg_server_00004,tg_server_00009</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.817" level="INFO">${plotFiles} = tg_server_00004,tg_server_00009</msg>
+<status endtime="20170324 12:11:44.817" starttime="20170324 12:11:44.817" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${expplotFiles}</arg>
+<arg>['tg_server_00004', 'tg_server_00009']</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.819" level="INFO">${expplotFiles} = ['tg_server_00004', 'tg_server_00009']</msg>
+<status endtime="20170324 12:11:44.819" starttime="20170324 12:11:44.818" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${noPlotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.820" level="INFO">${noPlotFiles} = []</msg>
+<status endtime="20170324 12:11:44.820" starttime="20170324 12:11:44.819" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>graph/s49_bound.png</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.821" level="INFO">${output} = graph/s49_bound.png</msg>
+<status endtime="20170324 12:11:44.822" starttime="20170324 12:11:44.820" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${upperLimit}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.825" level="INFO">${upperLimit} = 0</msg>
+<status endtime="20170324 12:11:44.825" starttime="20170324 12:11:44.823" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${lowerLimit}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.826" level="INFO">${lowerLimit} = 0</msg>
+<status endtime="20170324 12:11:44.826" starttime="20170324 12:11:44.825" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${bound}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.828" level="INFO">${bound} = []</msg>
+<status endtime="20170324 12:11:44.828" starttime="20170324 12:11:44.827" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${expbound}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.829" level="INFO">${expbound} = []</msg>
+<status endtime="20170324 12:11:44.829" starttime="20170324 12:11:44.828" status="PASS"></status>
+</kw>
+<kw name="Parse Options" library="iperf3_plot_library">
+<arguments>
+<arg>-f</arg>
+<arg>${foldername}</arg>
+<arg>-o</arg>
+<arg>${output}</arg>
+<arg>-p ${plotFiles}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.830" starttime="20170324 12:11:44.829" status="PASS"></status>
+</kw>
+<kw name="Result Should Be" library="iperf3_plot_library">
+<arguments>
+<arg>${foldername}</arg>
+<arg>${expplotFiles}</arg>
+<arg>${noplotFiles}</arg>
+<arg>${output}</arg>
+<arg>${upperLimit}</arg>
+<arg>${lowerLimit}</arg>
+<arg>${expbound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.831" starttime="20170324 12:11:44.830" status="PASS"></status>
+</kw>
+<kw name="Print Message" library="iperf3_plot_library">
+<arguments>
+<arg>foldername ${foldername}\n plotFiles ${expplotFiles}\n noPlotFiles ${noPlotFiles}\n output ${output}\n upperLimit ${upperLimit}\n lowerLimit ${lowerLimit}\n bound ${expbound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.832" starttime="20170324 12:11:44.831" status="PASS"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status critical="yes" endtime="20170324 12:11:44.832" starttime="20170324 12:11:44.815" status="PASS"></status>
+</test>
+<test id="s1-t5" name="Test Parameters -f, -o, -p, -u, -l">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${foldername}</arg>
+<arg>./testTarball</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.835" level="INFO">${foldername} = ./testTarball</msg>
+<status endtime="20170324 12:11:44.835" starttime="20170324 12:11:44.833" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${plotFiles}</arg>
+<arg>tg_server_00004,tg_server_00009</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.837" level="INFO">${plotFiles} = tg_server_00004,tg_server_00009</msg>
+<status endtime="20170324 12:11:44.837" starttime="20170324 12:11:44.836" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${expplotFiles}</arg>
+<arg>['tg_server_00004', 'tg_server_00009']</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.838" level="INFO">${expplotFiles} = ['tg_server_00004', 'tg_server_00009']</msg>
+<status endtime="20170324 12:11:44.838" starttime="20170324 12:11:44.837" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${noPlotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.839" level="INFO">${noPlotFiles} = []</msg>
+<status endtime="20170324 12:11:44.839" starttime="20170324 12:11:44.838" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>graph/s49_bound.png</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.840" level="INFO">${output} = graph/s49_bound.png</msg>
+<status endtime="20170324 12:11:44.841" starttime="20170324 12:11:44.839" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${upperLimit}</arg>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.842" level="INFO">${upperLimit} = 0.5</msg>
+<status endtime="20170324 12:11:44.842" starttime="20170324 12:11:44.841" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${lowerLimit}</arg>
+<arg>0.45</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.843" level="INFO">${lowerLimit} = 0.45</msg>
+<status endtime="20170324 12:11:44.843" starttime="20170324 12:11:44.842" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${bound}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.844" level="INFO">${bound} = []</msg>
+<status endtime="20170324 12:11:44.844" starttime="20170324 12:11:44.843" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${expbound}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.846" level="INFO">${expbound} = []</msg>
+<status endtime="20170324 12:11:44.846" starttime="20170324 12:11:44.845" status="PASS"></status>
+</kw>
+<kw name="Parse Options" library="iperf3_plot_library">
+<arguments>
+<arg>-f</arg>
+<arg>${foldername}</arg>
+<arg>-o</arg>
+<arg>${output}</arg>
+<arg>-p ${plotFiles}</arg>
+<arg>-u</arg>
+<arg>${upperLimit}</arg>
+<arg>-l</arg>
+<arg>${lowerLimit}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.847" starttime="20170324 12:11:44.846" status="PASS"></status>
+</kw>
+<kw name="Result Should Be" library="iperf3_plot_library">
+<arguments>
+<arg>${foldername}</arg>
+<arg>${expplotFiles}</arg>
+<arg>${noplotFiles}</arg>
+<arg>${output}</arg>
+<arg>${upperLimit}</arg>
+<arg>${lowerLimit}</arg>
+<arg>${expbound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.848" starttime="20170324 12:11:44.848" status="PASS"></status>
+</kw>
+<kw name="Print Message" library="iperf3_plot_library">
+<arguments>
+<arg>foldername ${foldername}\n plotFiles ${expplotFiles}\n noPlotFiles ${noPlotFiles}\n output ${output}\n upperLimit ${upperLimit}\n lowerLimit ${lowerLimit}\n bound ${expbound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.849" starttime="20170324 12:11:44.848" status="PASS"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status critical="yes" endtime="20170324 12:11:44.849" starttime="20170324 12:11:44.833" status="PASS"></status>
+</test>
+<test id="s1-t6" name="Test Parameters -f, -o, -n">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${foldername}</arg>
+<arg>./testTarball</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.851" level="INFO">${foldername} = ./testTarball</msg>
+<status endtime="20170324 12:11:44.851" starttime="20170324 12:11:44.850" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${plotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.852" level="INFO">${plotFiles} = []</msg>
+<status endtime="20170324 12:11:44.853" starttime="20170324 12:11:44.851" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${expplotFiles}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.854" level="INFO">${expplotFiles} = []</msg>
+<status endtime="20170324 12:11:44.854" starttime="20170324 12:11:44.853" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${noPlotFiles}</arg>
+<arg>tg_server_00004,tg_server_00009</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.855" level="INFO">${noPlotFiles} = tg_server_00004,tg_server_00009</msg>
+<status endtime="20170324 12:11:44.855" starttime="20170324 12:11:44.854" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${expNoPlotFiles}</arg>
+<arg>['tg_server_00004', 'tg_server_00009']</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.856" level="INFO">${expNoPlotFiles} = ['tg_server_00004', 'tg_server_00009']</msg>
+<status endtime="20170324 12:11:44.856" starttime="20170324 12:11:44.855" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>graph/s49_bound.png</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.858" level="INFO">${output} = graph/s49_bound.png</msg>
+<status endtime="20170324 12:11:44.858" starttime="20170324 12:11:44.857" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${upperLimit}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.859" level="INFO">${upperLimit} = 0</msg>
+<status endtime="20170324 12:11:44.859" starttime="20170324 12:11:44.858" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${lowerLimit}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.862" level="INFO">${lowerLimit} = 0</msg>
+<status endtime="20170324 12:11:44.863" starttime="20170324 12:11:44.859" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${bound}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.864" level="INFO">${bound} = []</msg>
+<status endtime="20170324 12:11:44.864" starttime="20170324 12:11:44.863" status="PASS"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${expbound}</arg>
+<arg>[]</arg>
+</arguments>
+<msg timestamp="20170324 12:11:44.865" level="INFO">${expbound} = []</msg>
+<status endtime="20170324 12:11:44.866" starttime="20170324 12:11:44.864" status="PASS"></status>
+</kw>
+<kw name="Parse Options" library="iperf3_plot_library">
+<arguments>
+<arg>-f</arg>
+<arg>${foldername}</arg>
+<arg>-o</arg>
+<arg>${output}</arg>
+<arg>-n ${noPlotFiles}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.867" starttime="20170324 12:11:44.866" status="PASS"></status>
+</kw>
+<kw name="Result Should Be" library="iperf3_plot_library">
+<arguments>
+<arg>${foldername}</arg>
+<arg>${expplotFiles}</arg>
+<arg>${expNoplotFiles}</arg>
+<arg>${output}</arg>
+<arg>${upperLimit}</arg>
+<arg>${lowerLimit}</arg>
+<arg>${expbound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.867" starttime="20170324 12:11:44.867" status="PASS"></status>
+</kw>
+<kw name="Print Message" library="iperf3_plot_library">
+<arguments>
+<arg>foldername ${foldername}\n plotFiles ${expplotFiles}\n noPlotFiles ${expNoPlotFiles}\n output ${output}\n upperLimit ${upperLimit}\n lowerLimit ${lowerLimit}\n bound ${expbound}</arg>
+</arguments>
+<status endtime="20170324 12:11:44.868" starttime="20170324 12:11:44.867" status="PASS"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status critical="yes" endtime="20170324 12:11:44.868" starttime="20170324 12:11:44.849" status="PASS"></status>
+</test>
+<doc>Suite description</doc>
+<status endtime="20170324 12:11:44.869" starttime="20170324 12:11:13.851" status="PASS"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="6">Critical Tests</stat>
+<stat fail="0" pass="6">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="6">DEBUG</stat>
+</tag>
+<suite>
+<stat id="s1" fail="0" name="Iperf3 Plot" pass="6">Iperf3 Plot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
