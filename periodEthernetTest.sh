@@ -9,12 +9,20 @@
 #
 # and iperfPlotter
 # https://github.com/bosforox/iperfPlotter.git
-echo "-------------------"
-echo "| Period LAN Test |"
-echo "-------------------"
+echo "--------------------------------"
+echo "| Period LAN Test (only Master) |"
+echo "--------------------------------"
 echo ""
-echo "Please start iperf server on the first PC/LAN interface"
+echo "Did you set your IP adreses?"
+echo "sudo ifconfig eth0 192.168.1.10 netmask 255.255.255.0 up"
+echo ""
+echo ""
+echo "Please start iperf server on the SLAVE PC"
 echo "iperf3 -s"
+echo ""
+echo "or route second LAN_Interface, if you use only a master pc"
+echo ""
+echo ""
 echo ""
 echo ""
 echo "Please give the name of test object"
@@ -27,11 +35,10 @@ echo "The $NAME_OF_TEST_OBJECT is  getting tested"
 IP_ADRESS_OF_SERVER=192.168.1.1
 
 VAR_T=1
-LIST_VAR_P="P1 P5 P10 P25 P50 P100"
-#LIST_VAR_P="P1 P5 P10 P25 P50"
-#LIST_VAR_M="Xm 1m 10m 100m 1000m 10000m 100000m"
-LIST_VAR_M="Xm 100m 1000m 10000m"
-
+#LIST_VAR_P="P1 P5 P10 P25 P50 P100"
+LIST_VAR_P="P1 P5 P10 P25 P50"
+LIST_VAR_M="Xm 1m 10m 100m 1000m 10000m 100000m"
+#LIST_VAR_M="Xm 100m 1000m 10000m"
 
 
 echo "Preset IP adress is $IP_ADRESS_OF_SERVER"
@@ -73,14 +80,15 @@ FOLDER_NAME=""
 FOLDER_NAME+=$DATE_V
 FOLDER_NAME+=$NAME_OF_TEST_OBJECT
 
-mkdir testPeriod/$FOLDER_NAME/
-mkdir graph/$FOLDER_NAME/
+mkdir $FOLDER_NAME
+mkdir $FOLDER_NAME/data
+mkdir $FOLDER_NAME/graph
 
 for j in $LIST_VAR_P; do
   echo "$j"
   #M_VAL=$j
-  mkdir testPeriod/$FOLDER_NAME/$j
-  mkdir graph/$FOLDER_NAME/$j
+  mkdir $FOLDER_NAME/data/$j
+  mkdir $FOLDER_NAME/graph/$j
 done
 
 echo "The folders are ready!"
@@ -112,9 +120,9 @@ for i in $LIST_VAR_P; do
 
     case $j in
       Xm)
-        iperf3 -c $IP_ADRESS_OF_SERVER -Z -i 1 -A 1 -t$TEST_DURATION -$P_VAL -J > ./testPeriod/$FOLDER_NAME/$P_VAL/$FILE_NAME;;
+        iperf3 -c $IP_ADRESS_OF_SERVER -Z -i 1 -A 1 -t$TEST_DURATION -$P_VAL -J > ./$FOLDER_NAME/data/$P_VAL/$FILE_NAME;;
       *)
-        iperf3 -c $IP_ADRESS_OF_SERVER -Z -i 1 -A 1 -b $M_VAL -t$TEST_DURATION -$P_VAL -J > ./testPeriod/$FOLDER_NAME/$P_VAL/$FILE_NAME;;
+        iperf3 -c $IP_ADRESS_OF_SERVER -Z -i 1 -A 1 -b $M_VAL -t$TEST_DURATION -$P_VAL -J > ./$FOLDER_NAME/data/$P_VAL/$FILE_NAME;;
     esac
     echo "Done!"
 
@@ -133,7 +141,7 @@ tree ./testPeriod/$FOLDER_NAME
 
 for j in $LIST_VAR_P; do
   echo "$j"
-  python3 iperf3_plot.py -f ./testPeriod/$FOLDER_NAME/$j -o graph/$FOLDER_NAME/$j/all.png
+  python3 iperf3_plot.py -f ./$FOLDER_NAME/data/$j -o $FOLDER_NAME/graph/$j/all.png
 done
 
 
