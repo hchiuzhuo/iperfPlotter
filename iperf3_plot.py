@@ -23,16 +23,16 @@ class iperf3_plotter(object):
         self.upperbond=upperLimit
         self.lowerbond=lowerLimit
         self.bound=bound
- 
+
     def defTableu(self):
-        tableau20 = [(31, 119, 180), (174, 199, 232), (255, 127, 14), (255, 187, 120),  
-                     (44, 160, 44), (152, 223, 138), (214, 39, 40), (255, 152, 150),  
-                     (148, 103, 189), (197, 176, 213), (140, 86, 75), (196, 156, 148),  
-                     (227, 119, 194), (247, 182, 210), (127, 127, 127), (199, 199, 199),  
-                     (188, 189, 34), (219, 219, 141), (23, 190, 207), (158, 218, 229)]  
-        for i in range(len(tableau20)):  
-            r, g, b = tableau20[i]  
-            tableau20[i] = (r / 255., g / 255., b / 255.)  
+        tableau20 = [(31, 119, 180), (174, 199, 232), (255, 127, 14), (255, 187, 120),
+                     (44, 160, 44), (152, 223, 138), (214, 39, 40), (255, 152, 150),
+                     (148, 103, 189), (197, 176, 213), (140, 86, 75), (196, 156, 148),
+                     (227, 119, 194), (247, 182, 210), (127, 127, 127), (199, 199, 199),
+                     (188, 189, 34), (219, 219, 141), (23, 190, 207), (158, 218, 229)]
+        for i in range(len(tableau20)):
+            r, g, b = tableau20[i]
+            tableau20[i] = (r / 255., g / 255., b / 255.)
         return tableau20
 
     def plotBox(self, dataset,filename, desc, title):
@@ -56,10 +56,10 @@ class iperf3_plotter(object):
         upperbond=self.upperbond
         lowerbond=self.lowerbond
         for c in dataset.columns:
-            axs[i].spines["left"].set_visible(False) 
-            axs[i].spines["right"].set_visible(False) 
-            axs[i].get_xaxis().tick_bottom()  
-            axs[i].get_yaxis().tick_left()  
+            axs[i].spines["left"].set_visible(False)
+            axs[i].spines["right"].set_visible(False)
+            axs[i].get_xaxis().tick_bottom()
+            axs[i].get_yaxis().tick_left()
             axs[i].set_title(c)
             axs[i].plot(dataset.index, dataset[c],color=tableau20[i])
             if self.upperbond >0 : axs[i].plot(dataset.index,[upperbond]* len(dataset.index),"--", lw=2, color="red", alpha=0.5)
@@ -68,51 +68,51 @@ class iperf3_plotter(object):
             i=i+1
             if i==5: break
         # plt.title(title)
-        plt.savefig(filename, bbox_inches="tight")    
-        
+        plt.savefig(filename, bbox_inches="tight")
+
     def plotLinePretty(self, dataset,filename, desc, title):
         tableau20 = self.defTableu()
 
         y_level = int((int(dataset.values.max()) - int(dataset.values.min()))/20)
         if y_level==0:
             y_level = (dataset.values.max()-dataset.values.min())/20
-        
+
         y_max = dataset.values.max()+y_level
         y_min = dataset.values.min()
 
         x_max = dataset.index[-1]
         x_min = dataset.index[0]
         x_level = (x_max - x_min)/6
- 
 
-        plt.figure(figsize=(12, 14))  
-        ax = plt.subplot(111)  
-        ax.spines["top"].set_visible(False)  
-        ax.spines["bottom"].set_visible(False)  
-        ax.spines["right"].set_visible(False)  
-        ax.spines["left"].set_visible(False)  
+
+        plt.figure(figsize=(12, 14))
+        ax = plt.subplot(111)
+        ax.spines["top"].set_visible(False)
+        ax.spines["bottom"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_visible(False)
 
         ax.get_xaxis().tick_bottom()
-        ax.get_yaxis().tick_left()  
+        ax.get_yaxis().tick_left()
 
         plt.ylim(y_min, y_max)
-        plt.xlim(x_min, x_max)  
+        plt.xlim(x_min, x_max)
 
         plt.yticks(np.arange(y_min, y_max, y_level), [str(round(x,3)) for x in np.arange(y_min, y_max, y_level)], fontsize=14)
-        plt.xticks(fontsize=14)  
+        plt.xticks(fontsize=14)
 
 
-        for y in np.arange(y_min, y_max, y_level):  
-            plt.plot(np.arange(x_min, x_max), [y] * len(np.arange(x_min, x_max)), "--", lw=1, color="black", alpha=0.3)  
+        for y in np.arange(y_min, y_max, y_level):
+            plt.plot(np.arange(x_min, x_max), [y] * len(np.arange(x_min, x_max)), "--", lw=1, color="black", alpha=0.3)
 
 
-        plt.tick_params(axis="both", which="both", bottom="off", top="off",  
-                        labelbottom="on", left="off", right="off", labelleft="on")  
+        plt.tick_params(axis="both", which="both", bottom="off", top="off",
+                        labelbottom="on", left="off", right="off", labelleft="on")
 
         clients = dataset.columns
         i=0;
         for rank, column in enumerate(clients):
-            plt.plot(dataset.index, dataset[column].values, lw=1,color=tableau20[rank%20])  
+            plt.plot(dataset.index, dataset[column].values, lw=1,color=tableau20[rank%20])
             # y_pos = dataset[column].values[-1]
             y_pos = dataset[column].mean()
             # print(column,dataset[column].values[-1], dataset[column].mean() )
@@ -131,8 +131,8 @@ class iperf3_plotter(object):
 
         plt.title(title, fontsize=17)
         # plt.text(x_min+(x_max-x_min)/2, y_max, title, fontsize=17, ha="center")
-        plt.text(x_max, y_max, desc, fontsize=10) 
-        plt.savefig(filename, bbox_inches="tight") 
+        plt.text(x_max, y_max, desc, fontsize=10)
+        plt.savefig(filename, bbox_inches="tight")
 
 class iperf3_dataParser(object):
     def getOptionParser(self):
@@ -316,7 +316,7 @@ if __name__ == '__main__':
 
         #plot all lines, sort by mean value/column
         if len(bound) >=0:
-            dataset = dataset.reindex_axis(dataset.mean().sort_values().index, axis=1)
+            dataset = dataset.reindex(dataset.mean().sort_values().index, axis=1)
             # last_row_name = dataset.index[-1]
             # dataset = dataset.T.sort(columns=last_row_name, ascending=False).T
             # dataset.to_csv(output + "_sort_by_mean.csv")
